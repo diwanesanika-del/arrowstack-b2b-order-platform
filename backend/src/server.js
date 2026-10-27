@@ -9,7 +9,7 @@ async function startServer() {
     // Initialize database (Real PostgreSQL with automatic embedded fallback if port 5432 is inactive)
     await initDatabase();
 
-    const server = app.listen(PORT, () => {
+    const server = app.listen(PORT, '0.0.0.0', () => {
       console.log(`🚀 B2B Order Platform REST API is running on http://localhost:${PORT}`);
       console.log(`📊 Health check available at http://localhost:${PORT}/health`);
       console.log(`📦 Catalog API available at http://localhost:${PORT}/api/products`);
